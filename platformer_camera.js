@@ -78,7 +78,7 @@ pc.script.create('PlatformerCamera', function (context) {
             var pos = this.entity.getPosition();
 
             pos.x  = pp.x;
-            pos.y += 10;
+            pos.z += 20;
 
             this.targetPosition.copy(pos);
         },  
