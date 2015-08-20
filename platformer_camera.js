@@ -14,8 +14,8 @@ pc.script.attribute("lowerLimit", "number", -5, {displayName: "Camera Lower Limi
 //  - The player must have the platform_character_controller script with the getGround() method implemented
 
 pc.script.create('PlatformerCamera', function (context) {
-    var STATE_LOCKED_BOTTOM = 0;
-    var STATE_LOCKED_PLATFORM = 1;
+    var STATE_LOCKED_BOTTOM = 1;
+    var STATE_LOCKED_PLATFORM = 0;
     var STATE_TRANSFER = 2;
     
     var temp = new pc.Vec3();
