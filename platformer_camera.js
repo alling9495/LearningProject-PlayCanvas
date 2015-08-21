@@ -14,9 +14,9 @@ pc.script.attribute("lowerLimit", "number", -5, {displayName: "Camera Lower Limi
 //  - The player must have the platform_character_controller script with the getGround() method implemented
 
 pc.script.create('PlatformerCamera', function (context) {
-    var STATE_LOCKED_BOTTOM = 1;
+    var STATE_LOCKED_BOTTOM = 0;
     var STATE_LOCKED_PLATFORM = 0;
-    var STATE_LOCKED_ANGLE = 0;
+    var STATE_LOCKED_ANGLE = 1;
     var STATE_TRANSFER = 2;
     
     var temp = new pc.Vec3();
@@ -56,6 +56,8 @@ pc.script.create('PlatformerCamera', function (context) {
                 this.updateLockedBottom(dt);
             } else if (this.state === STATE_LOCKED_PLATFORM) {
                 this.updateLockedPlatform(dt);
+            } else if (this.state === STATE_LOCKED_ANGLE) {
+                this.updateLockedAngle(dt);
             }
             
             this.updateCameraPosition(dt);
@@ -78,7 +80,7 @@ pc.script.create('PlatformerCamera', function (context) {
             var pos = this.entity.getPosition();
 
             pos.x  = pp.x;
-            pos.z += 20;
+            pos.y += 20;
 
             this.targetPosition.copy(pos);
         },  
