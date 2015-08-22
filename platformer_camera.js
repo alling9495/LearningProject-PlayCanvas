@@ -56,11 +56,13 @@ pc.script.create('PlatformerCamera', function (context) {
                 this.updateLockedBottom(dt);
             } else if (this.state === STATE_LOCKED_PLATFORM) {
                 this.updateLockedPlatform(dt);
-            } else if (this.state === STATE_LOCKED_ANGLE) {
-                this.updateLockedAngle(dt);
-            }
+            } 
             
             this.updateCameraPosition(dt);
+
+            if (this.state === STATE_LOCKED_ANGLE) {
+                this.updateLockedAngle(dt);
+            }
             
         },
         
@@ -75,19 +77,8 @@ pc.script.create('PlatformerCamera', function (context) {
         },
 
         updateLockedAngle: function(dt) {
-            var pp = this.player.getPosition();
-
-            var pos = this.entity.getPosition();
-
-            pos.x  = pp.x;
-            pos.y += 20;
-
             this.entity.setEulerAngles(0, -45, 0);
-            
-
-
-            this.targetPosition.copy(pos);
-        },  
+        },
         
         updateLockedPlatform: function (dt) {
             var ground = this.player.script.platform_character_controller.getGround();
