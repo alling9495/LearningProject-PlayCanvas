@@ -28,7 +28,7 @@ pc.script.create("input_handler", function(app) {
          this.entity.setLocalPosition(x, y, z);
       },
 
-      onKeyDown: function (event) } {
+      onKeyDown: function (event) {
 
       },
 
