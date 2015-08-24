@@ -4,7 +4,7 @@ pc.script.create("input_handler", function(app) {
       this.entity = entity;
    };
 
-   InputHandler.prototype {
+   InputHandler.prototype = {
       initialize: function() {
          app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
          app.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
