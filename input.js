@@ -16,13 +16,13 @@ pc.script.create("input_handler", function(app) {
          var z = 0;
 
          if (app.keyboard.isPressed(pc.KEY_W)) {
-
+            x += 5;
          } else if (app.keyboard.isPressed(pc.KEY_S)) {
-
+            x -= 5;
          } else if (app.keyboard.isPressed(pc.KEY_A)) {
-
+            z += 5;
          } else if (app.keyboard.isPressed(pc.KEY_D)) {
-
+            z -= 5;
          }
 
          this.entity.setLocalPosition(x, y, z);
