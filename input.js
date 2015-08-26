@@ -1,3 +1,8 @@
+/* Input 
+ * - Handle all input
+ * - Decouple from target entity
+ */
+
 pc.script.create("input_handler", function(app) {
 
    var InputHandler = function (entity) {
